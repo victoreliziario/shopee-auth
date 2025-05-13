@@ -1,11 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
-  <title>Authorization Success</title>
+  <title>Autorização Shopee</title>
 </head>
 <body>
-  <h1>Shopee Authorization Complete</h1>
-  <p>You can now return to the application. The code has been received.</p>
+  <h2>Autorização recebida!</h2>
+  <p id="resposta"></p>
+
+  <script>
+    const url = new URL(window.location.href);
+    const code = url.searchParams.get("code");
+    const shop_id = url.searchParams.get("shop_id");
+    document.getElementById("resposta").innerText = `Code: ${code} | Shop ID: ${shop_id}`;
+  </script>
 </body>
 </html>
